@@ -5,9 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by t450 on 18.11.2017.
@@ -43,7 +47,11 @@ public class EventsListAdapter extends BaseAdapter{
     }
 
     private static class ViewHolder {
-        TextView eventName;
+        private TextView eventName;
+        private TextView eventDay;
+        private TextView eventMonth;
+        private ImageView eventImage;
+        private TextView eventHostName;
     }
 
     @Override
@@ -58,6 +66,10 @@ public class EventsListAdapter extends BaseAdapter{
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.event_row_item, parent, false);
             viewHolder.eventName = convertView.findViewById(R.id.event_name);
+            viewHolder.eventDay = convertView.findViewById(R.id.event_day);
+            viewHolder.eventMonth = convertView.findViewById(R.id.event_month);
+            viewHolder.eventImage = convertView.findViewById(R.id.event_host_avatar);
+            viewHolder.eventHostName = convertView.findViewById(R.id.event_host_name);
 
             result=convertView;
 
@@ -68,6 +80,10 @@ public class EventsListAdapter extends BaseAdapter{
         }
 
         viewHolder.eventName.setText(eventsList.get(position).getName());
+        viewHolder.eventDay.setText(eventsList.get(position).getDay());
+        viewHolder.eventMonth.setText(eventsList.get(position).getMonth());
+        viewHolder.eventImage.setImageResource(eventsList.get(position).getImageId());
+        viewHolder.eventHostName.setText(eventsList.get(position).getHostName());
         // Return the completed view to render on screen
         return result;
     }

@@ -23,11 +23,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().hide();
+
+
         if (AccessToken.getCurrentAccessToken() == null) {
             Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
             startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
             overridePendingTransition(0,0);
         }
+
     }
 
     @Override
@@ -53,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 super.onActivityResult(requestCode,resultCode, data);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
         }
     }
 
