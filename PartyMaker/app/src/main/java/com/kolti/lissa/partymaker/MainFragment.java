@@ -27,7 +27,7 @@ public class MainFragment extends Fragment {
         ListView eventsList = view.findViewById(R.id.events_list_view);
         ArrayList<Event> events = new ArrayList<>();
         for(int i = 0; i < 15; i++)
-            events.add(new Event("test" +i));
+            events.add(new Event("party " +i));
 
         EventsListAdapter adapter = new EventsListAdapter(getContext(), events);
         eventsList.setAdapter(adapter);

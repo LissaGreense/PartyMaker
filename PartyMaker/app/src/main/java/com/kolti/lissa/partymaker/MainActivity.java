@@ -26,26 +26,33 @@ public class MainActivity extends AppCompatActivity {
         if (AccessToken.getCurrentAccessToken() == null) {
             Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
             startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
+            overridePendingTransition(0,0);
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // Check which request we're responding to
-        if (requestCode == RESULT_LOGIN_ACTIVITY) {
-            if(resultCode == RESULT_OK){
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .add(R.id.content_main, new MainFragment())
-                        .addToBackStack("main_fragment")
-                        .commitAllowingStateLoss();
-            }
-            if (resultCode == RESULT_CANCELED) {
-                if (AccessToken.getCurrentAccessToken() == null) {
-                    Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
-                    startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
+
+        switch (requestCode) {
+            case RESULT_LOGIN_ACTIVITY:
+                overridePendingTransition(0,0);
+                if(resultCode == RESULT_OK){
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.content_main, new MainFragment())
+                            .addToBackStack("main_fragment")
+                            .commitAllowingStateLoss();
                 }
-            }
+                if (resultCode == RESULT_CANCELED) {
+                    if (AccessToken.getCurrentAccessToken() == null) {
+                        Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
+                        startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
+                        overridePendingTransition(0,0);
+                    }
+                }
+                break;
+            default:
+                super.onActivityResult(requestCode,resultCode, data);
         }
     }
 
