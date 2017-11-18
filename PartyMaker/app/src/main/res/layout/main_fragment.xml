@@ -14,8 +14,9 @@
         android:gravity="center"
         android:text="@string/create_party"/>
 
+
     <ListView
-        android:id="@+id/party_list_view"
+        android:id="@+id/events_list_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"/>
