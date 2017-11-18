@@ -1,5 +1,6 @@
 package com.kolti.lissa.partymaker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,9 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
+
+import com.facebook.AccessToken;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final int RESULT_LOGIN_ACTIVITY = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +24,32 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.content_main, new MainFragment())
-                .addToBackStack("main_fragment")
-                .commit();
+        if (AccessToken.getCurrentAccessToken() == null) {
+            Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
+            startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
+        }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == RESULT_LOGIN_ACTIVITY) {
+            if(resultCode == RESULT_OK){
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.content_main, new MainFragment())
+                        .addToBackStack("main_fragment")
+                        .commit();
+            }
+            if (resultCode == RESULT_CANCELED) {
+                if (AccessToken.getCurrentAccessToken() == null) {
+                    Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
+                    startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
+                }
+            }
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
