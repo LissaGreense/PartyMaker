@@ -12,7 +12,6 @@ import android.view.MenuItem;
 
 import com.facebook.AccessToken;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private static final int RESULT_LOGIN_ACTIVITY = 1;
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         .beginTransaction()
                         .add(R.id.content_main, new MainFragment())
                         .addToBackStack("main_fragment")
-                        .commit();
+                        .commitAllowingStateLoss();
             }
             if (resultCode == RESULT_CANCELED) {
                 if (AccessToken.getCurrentAccessToken() == null) {
