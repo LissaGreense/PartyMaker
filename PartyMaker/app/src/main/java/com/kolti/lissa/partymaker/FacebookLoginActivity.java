@@ -29,6 +29,10 @@ public class FacebookLoginActivity extends Activity {
     }
 
     @Override
+    public void onBackPressed() {
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.facebook_login_activity);
@@ -51,15 +55,14 @@ public class FacebookLoginActivity extends Activity {
             @Override
             public void onCancel() {
                 setResult(RESULT_CANCELED);
-                finish();
             }
 
             @Override
             public void onError(FacebookException e) {
                 setResult(RESULT_CANCELED);
-                finish();
                 // Handle exception
             }
         });
+
     }
 }
