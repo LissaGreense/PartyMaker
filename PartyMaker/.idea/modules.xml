@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PartyMaker.iml" filepath="$PROJECT_DIR$/PartyMaker.iml" />
-      <module fileurl="file://C:\Users\t450\Documents\GitHub\eight\PartyMaker\PartyMaker.iml" filepath="C:\Users\t450\Documents\GitHub\eight\PartyMaker\PartyMaker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\t450\Documents\GitHub\eight\PartyMaker\app\app.iml" filepath="C:\Users\t450\Documents\GitHub\eight\PartyMaker\app\app.iml" />
     </modules>
   </component>
 </project>
