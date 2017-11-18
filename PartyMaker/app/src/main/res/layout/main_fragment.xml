@@ -10,6 +10,7 @@
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <ListView
+            android:focusedByDefault="true"
             android:id="@+id/events_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +29,10 @@
             android:layout_width="match_parent"
             android:layout_height="250dip"
             app:titleEnabled="false"
-            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             app:expandedTitleMarginBottom="20dp"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
@@ -40,7 +44,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/events_list_toolbar_bg"
                 app:layout_collapseMode="parallax"
-                app:layout_scrollFlags="enterAlwaysCollapsed" />
+                android:focusable="false"/>
 
 
                 <Button
@@ -60,7 +64,7 @@
                 android:background="@color/transparent"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_scrollFlags="enterAlwaysCollapsed"/>
+                android:focusable="false"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
