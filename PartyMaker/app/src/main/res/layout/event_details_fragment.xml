@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/white"
+
     xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_margin"
+    android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@android:drawable/sym_def_app_icon" />
+                app:srcCompat="@drawable/com_facebook_profile_picture_blank_portrait" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -52,15 +59,20 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="TITLE"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textSize="@dimen/default_font_size"
             android:gravity="center"/>
         
-        <TextView
+        <Button
+            android:background="@color/transparent"
             android:id="@+id/event_details_description"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="DESCRIPTION"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textSize="@dimen/default_font_size"
             android:gravity="center"/>
         
@@ -83,6 +95,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:text="ADDRESS"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textSize="@dimen/default_font_size"
                 android:gravity="center"/>
             
@@ -107,6 +121,7 @@
 
 
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
@@ -150,3 +165,5 @@
         
         
     </LinearLayout>
+
+</ScrollView>
