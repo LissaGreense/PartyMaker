@@ -17,114 +17,130 @@
             android:layout_height="0dp"
             android:layout_weight="2"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:layout_margin="@dimen/default_margin"
+            android:weightSum="7">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="2"
+                android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    app:srcCompat="@drawable/ic_accepted" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    app:srcCompat="@android:drawable/sym_def_app_icon" />
+                    android:gravity="center_horizontal"
+                    android:text="50"
+                    android:textSize="@dimen/default_font_size" />
 
             </LinearLayout>
 
-            <ImageView
+            <com.kolti.lissa.partymaker.SquareImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
                 app:srcCompat="@drawable/com_facebook_profile_picture_blank_portrait" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:gravity="bottom">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="@android:drawable/sym_def_app_icon" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                app:srcCompat="@drawable/ic_maybe" />
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="30"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/default_font_size" />
+
+        </LinearLayout>
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/event_details_title"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:text="TITLE"
             android:ellipsize="end"
             android:singleLine="true"
             android:textSize="@dimen/default_font_size"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_margin="@dimen/default_margin" />
         
         <Button
             android:background="@color/transparent"
             android:id="@+id/event_details_description"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:text="DESCRIPTION"
             android:ellipsize="end"
-            android:singleLine="true"
+            android:maxLines="3"
             android:textSize="@dimen/default_font_size"
-            android:gravity="center"/>
-        
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_margin="@dimen/default_margin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_margin="@dimen/default_margin">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5">
-            
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/com_facebook_profile_picture_blank_portrait"/>
-            
-            <TextView
-                android:id="@+id/event_details_address"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:text="ADDRESS"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:textSize="@dimen/default_font_size"
-                android:gravity="center"/>
-            
-        </LinearLayout>
-        
-        <ProgressBar
-            android:id="@+id/event_details_progress_bar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:progress="40"
-            style="?android:progressBarStyleHorizontal"/>
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/ic_place" />
 
         <TextView
+            android:id="@+id/event_details_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_gravity="center_vertical"
+            android:text="ADDRESS"
+            android:textSize="@dimen/default_font_size" />
+
+    </LinearLayout>
+
+    <TextView
             android:text="DATE"
             android:textSize="@dimen/default_font_size"
             android:id="@+id/event_details_date"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_margin="@dimen/default_margin"/>
 
 
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:weightSum="3">
 
             <ImageButton
@@ -134,7 +150,7 @@
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_launcher_foreground"
+                app:srcCompat="@drawable/ic_food_and_drinks"
                 android:background="@color/transparent"/>
 
             <ImageButton
@@ -158,7 +174,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:textSize="@dimen/default_font_size"
             android:gravity="center"
             android:text="additional info"/>

@@ -58,7 +58,7 @@ public class EventDetailsFragment extends Fragment {
                             public void onClick(DialogInterface dialog, int which) {
                             }
                         })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setIcon(android.R.drawable.ic_dialog_info)
                         .show();
             }
         });
