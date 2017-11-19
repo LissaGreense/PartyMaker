@@ -43,7 +43,7 @@ public class MainFragment extends Fragment {
         for(int i = 0; i < 15; i++)
             events.add(new Event("party " +i,
                     "Opis opis moj wspanialy opis",
-                    "tutaj adresik",
+                    "ul. jakasUlicaxoxoxoxo",
                     date,
                     "Kamil"));
 

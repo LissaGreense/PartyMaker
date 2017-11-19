@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         if (AccessToken.getCurrentAccessToken() == null) {
             Intent loginIntent = new Intent(MainActivity.this, FacebookLoginActivity.class);
             startActivityForResult(loginIntent, RESULT_LOGIN_ACTIVITY);
@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager()
                             .beginTransaction()
                             .add(R.id.content_main, new MainFragment())
-                            .addToBackStack("main_fragment")
                             .commitAllowingStateLoss();
                 }
                 if (resultCode == RESULT_CANCELED) {
