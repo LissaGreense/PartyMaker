@@ -11,6 +11,8 @@ import java.util.Date;
 public class Event {
 
     private String name;
+    private String description;
+    private String address;
     private Date date;
     private int imageId;
     private String hostName;
@@ -18,20 +20,41 @@ public class Event {
 
     public Event(String name, Date date, String hostName){
         this.name = name;
+        description = "";
+        address = "";
         this.date = date;
-        this.imageId = R.drawable.com_facebook_profile_picture_blank_portrait;
+        imageId = R.drawable.com_facebook_profile_picture_blank_portrait;
         this.hostName = hostName;
     }
 
     public Event(String name, Date date, int imageId, String hostName){
         this.name = name;
+        description = "";
+        address = "";
         this.date = date;
         this.imageId = imageId;
         this.hostName = hostName;
     }
 
+    public Event(String name, String description, String address, Date date, String hostName){
+        this.name = name;
+        this.description = description;
+        this.address = address;
+        this.date = date;
+        imageId = R.drawable.com_facebook_profile_picture_blank_portrait;
+        this.hostName = hostName;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public String getDay(){
@@ -44,6 +67,10 @@ public class Event {
 
     public String getYear() {
         return (String) DateFormat.format("yyyy", date); // 2013
+    }
+
+    public String getFormattedDate(){
+        return getDay() + "." +getMonth() + "." +getYear();
     }
 
     public int getImageId() {
