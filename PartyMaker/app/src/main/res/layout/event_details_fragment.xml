@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+
     xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_margin"
+    android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +64,8 @@
             android:textSize="@dimen/default_font_size"
             android:gravity="center"/>
         
-        <TextView
+        <Button
+            android:background="@color/transparent"
             android:id="@+id/event_details_description"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -158,3 +165,5 @@
         
         
     </LinearLayout>
+
+</ScrollView>
