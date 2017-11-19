@@ -28,6 +28,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.facebook.android:facebook-android-sdk:4.28.0'
     compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.github.Vatican-Cameos:CarouselPicker:v1.0'
 
 }
 
