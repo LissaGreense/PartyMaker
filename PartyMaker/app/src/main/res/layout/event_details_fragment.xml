@@ -158,7 +158,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_tools"
+
+                app:srcCompat="@drawable/ic_star"
                 android:background="@color/transparent"/>
 
             <ImageButton
@@ -167,6 +168,7 @@
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_maybe"
+
                 android:background="@color/transparent"/>
 
         </LinearLayout>
@@ -175,6 +177,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.8"
+            android:layout_marginTop="22dp"
             android:textSize="@dimen/default_font_size"
             android:gravity="center"
             android:text="additional info"/>
