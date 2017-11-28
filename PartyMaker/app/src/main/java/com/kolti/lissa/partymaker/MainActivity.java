@@ -12,6 +12,10 @@ import android.view.MenuItem;
 
 import com.facebook.AccessToken;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int RESULT_LOGIN_ACTIVITY = 1;

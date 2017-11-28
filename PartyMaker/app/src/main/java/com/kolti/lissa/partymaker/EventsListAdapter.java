@@ -54,6 +54,10 @@ public class EventsListAdapter extends BaseAdapter{
         private TextView eventHostName;
     }
 
+    public void setEventsList(ArrayList<Event> eventsList) {
+        this.eventsList = eventsList;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder; // view lookup cache stored in tag

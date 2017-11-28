@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
+        android:background="@color/white"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <ListView
             android:focusedByDefault="true"
@@ -48,6 +49,7 @@
 
 
                 <Button
+                    android:id="@+id/create_party"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/create_party"
