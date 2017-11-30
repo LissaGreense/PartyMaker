@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -37,6 +38,7 @@ public class EventDetailsFragment extends Fragment {
         final Button description = view.findViewById(R.id.event_details_description);
         TextView address = view.findViewById(R.id.event_details_address);
         TextView date = view.findViewById(R.id.event_details_date);
+        ImageButton foodButton = view.findViewById(R.id.event_details_food);
 
         title.setText(event.getName());
         description.setText(event.getDescription());
@@ -62,6 +64,19 @@ public class EventDetailsFragment extends Fragment {
                         .show();
             }
         });
+
+        foodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.content_main, new CarouselFragment())
+                        .addToBackStack("carousel")
+                        .commit();
+            }
+        });
+
+
 
         return view;
     }
