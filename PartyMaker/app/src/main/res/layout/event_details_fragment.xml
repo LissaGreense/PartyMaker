@@ -144,6 +144,7 @@
             android:weightSum="3">
 
             <ImageButton
+                android:id="@+id/event_details_food"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
